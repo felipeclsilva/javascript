@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(45deg, rgb(0, 179, 255), rgb(255, 0, 153));
+            color: aliceblue;
+            height: 100vh;
+        }
+
+        div#testeCSS {
+            background-color: rgb(28, 144, 28);
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="queryClass">Iniciando estudos com DOM</h1>
+
+    <p>Aqui está o resultado</p>
+
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript rodando ECMAScript. Fazendo múltiplos teste com JS:</p>
+
+    <div id="alterar">Clique em mim(div)</div>
+    <div class="mudar">Clique em aqui(class)</div>
+    <div name="coisar">Clique em aqui(name)</div>
+    <div id="queryID">Clique em mim(div2)</div>
+    <div id="testeCSS">Teste nada a vê de CSS aaaaa</div>
+
+    <script>
+        let corpo = window.document.body
+        let p1 = window.document.getElementsByTagName('p')[0]
+        
+        // window.document.write('Está escrito assim: ' + p1.innerText) teste 1
+        
+        p1.style.color = 'lightgreen'//teste 2
+
+        corpo.style.fontFamily = 'cursive'//teste 3
+        
+        window.document.write(p1.innerText) // teste 4 e por algum motivo ele vai pro final
+
+        let div = window.document.getElementById('alterar') 
+        div.innerHTML = 'mudando texto do id' // teste 5 
+
+        let testeClass = window.document.getElementsByClassName('mudar')[0]
+        testeClass.innerHTML = 'mudando texto do class' // teste 6
+
+        let teste = window.document.getElementsByName('coisar')[0]
+        teste.innerText = teste.innerText + ' mudando texto do name' // teste 7
+
+        let testeQueryID = window.document.querySelector('div#queryID')
+        testeQueryID.innerText = 'mudando texto do id com querySelector'
+        testeQueryID.style.backgroundColor = '#000' // teste 8 com querySelector no ID
+
+        let testeQueryClass = window.document.querySelector('h1.queryClass')
+        testeQueryClass.style.fontFamily = 'Arial'
+        testeQueryClass.style.margin = '30px 0px'
+        testeQueryClass.style.textAlign = 'center' // teste 9 com querySelector no Class
+
+        // window.alert(testeQueryClass.innerHTML) // teste 10
+
+        // let testepAll = window.document.querySelectorAll('p')
+        // testepAll.style.color = 'blue' // teste 11 não funcionou
+    </script>
+</body>
+</html>

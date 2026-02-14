@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio boas-vindas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div#botao {
+            background-image: linear-gradient(141deg, #DDDDDD, #F6F6F6);
+            display: inline-block;
+            padding: 20px;
+            border: solid 1px rgba(0, 0, 0, 0.419);
+        }
+    </style>
+</head>
+<body>
+    <h1>Boas-vindas</h1>
+    <div id="botao" onclick="boasVindas()">Inicie o desafio</div>
+
+    <script>
+        function isStr(nome) {
+            if (typeof nome !== 'string') {
+                return false
+            }
+            // Rejeita se está vazio ou contém apenas números/espaços
+            return nome.trim().length > 0 && isNaN(Number(nome.trim()))
+        }
+
+        function boasVindas() {
+            let nome = window.prompt('Qual é o seu nome?')
+
+            if (!isStr(nome)) {
+                window.alert('Por favor, insira seu nome')
+            } else {
+                let idade = window.prompt(`Olá, ${nome}! Quantos anos você tem?`)
+                let idadeNum = Number.parseInt(idade)
+                
+                if (idade.length == 0 || !Number.isFinite(idadeNum) || !Number.isInteger(idadeNum) || idadeNum <= 0 || idadeNum > 116) {
+                    window.alert('Por favor, insira uma idade válida')
+                } else {
+                    window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`)
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

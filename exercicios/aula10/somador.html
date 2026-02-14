@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somador</title>
+    <style>
+        body {
+            background-color: lightgrey;
+            font: normal 10pt 'Arial';
+        }
+
+        #caixaMaior {
+            border-style: solid;
+            width: 500px;
+            margin: auto;
+            border-radius: 5px;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.414);
+        }
+
+        #caixaMaior h1 {
+            text-align: center;
+        }
+
+        #caixaMenor {
+            padding-left: 40px;
+        }
+
+        #caixaMaior div#result {
+            margin-top: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="caixaMaior">
+        <h1>Somando Valores</h1>
+        <div id="caixaMenor">
+            <input type="number" name="txtn1" id="txtn1"> +
+            <input type="number" name="txtn2" id="txtn2">
+            <input type="button" value="Somar" onclick="somar()">
+        </div>
+        <div id="result">Resultado</div>
+    </div>
+
+    <script>
+        function somar() {
+            // Pegando texto digitado na área 1 e 2
+            let txt1 = window.document.getElementById('txtn1')
+            let txt2 = window.document.querySelector('input#txtn2')
+
+            // Transformando em número
+            let n1 = Number.parseInt(txt1.value)
+            let n2 = Number.parseInt(txt2.value)
+
+            // Somando
+            let resultado = n1 + n2
+
+            // Pegando campo de resultado e substituindo pela resposta
+            let resDiv = window.document.getElementById('result')
+            resDiv.innerHTML = `A soma de ${n1} + ${n2} é igual a <strong>${resultado}</strong>`
+        }
+    </script>
+</body>
+</html>

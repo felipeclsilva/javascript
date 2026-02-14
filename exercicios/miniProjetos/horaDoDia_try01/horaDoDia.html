@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/favicon-16x16.png" type="image/x-icon">
+    <title>Hora do Dia</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1>Hora do Dia</h1>
+    
+    <div id="containerMaior">
+        <p id="txtHoras">Agora são 9 horas.</p>
+        <div id="containerImg">
+            <img src="image/manha.png" alt="imagem">
+        </div>
+    </div>
+    
+    <p>&copy; CursoemVideo</p>
+
+    <script>
+        let backGround = window.document.body
+        let imagem = window.document.querySelector('div#containerImg')
+
+        let agora = new Date()
+        let hora = agora.getHours()
+        
+        let txtHoras = window.document.getElementById('txtHoras')
+        txtHoras.innerHTML = `Agora são ${hora} hora(s).`
+
+        if (hora < 12) {
+            backGround.style.backgroundColor = '#CDBD91'
+            imagem.innerHTML = `<img src="image/manha.png" alt="imagem">`
+        } else if (hora >= 12 && hora < 18) {
+            backGround.style.backgroundColor = '#A87A65'
+            imagem.innerHTML = `<img src="image/tarde.png" alt="imagem">`
+        } else {
+            backGround.style.backgroundColor = '#464948'
+            imagem.innerHTML = `<img src="image/noite.png" alt="imagem">`
+        }
+    </script>
+</body>
+</html>

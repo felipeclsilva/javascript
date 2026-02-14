@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/favicon-32x32.png" type="image/x-icon">
+    <title>De onde você é?</title>
+    <style>
+        body {
+            background-color: lightgrey;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        main {
+            background-color: rgb(227, 227, 227);
+            border-style: solid;
+            border-radius: 8px;
+            width: 450px;
+            height: 160px;
+            margin: auto;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.455);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        main > div {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Bem-Vindo!</h1>
+        <p>Aqui você descobre se é brasileiro</p>
+        
+        Qual a sua nacionalidade? <input type="button" value="Responder" onclick="analisar()">
+        <div id="identificador"></div>
+    </main>
+
+    <script>
+        function analisar() {
+            let nacion = window.prompt(`Minha nacionalidade`)
+            let resposta = window.document.querySelector('div#identificador') 
+            let box = window.document.getElementsByTagName('main')[0]
+
+            if (nacion == 'Brasileiro' || nacion == 'brasileiro' || nacion == 'Brasileira' || nacion == 'brasileira') {
+                resposta.innerHTML = 'Que legal você é <strong>brasileiro(a)</strong>'
+                
+                box.style.height = '170px'
+            } else {
+                resposta.innerHTML = 'Olha só, você é <strong>estranegeiro(a)</strong>'
+                
+                box.style.height = '170px'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1>Verificador de Idade</h1>
+
+    <div id="container">
+        <p>
+            Ano de Nascimento: <input type="number" name="anoNascim" id="anoNascim">
+        </p>
+        
+        <p>
+            Sexo: <input type="radio" name="sexo" id="sexoMasc"> Masculino <input type="radio" name="sexo" id="sexoFemin"> Feminino
+        </p>
+
+        <p>
+            <input id='botaoVerific' type="button" value="Verificar">
+        </p>
+
+        <p id="txtVerificacao">
+            Preencha os dados acima para ver o resultado!
+        </p>
+        <div id="imgDeResp">
+            <!-- Imagem de Resposta -->
+        </div>
+    </div>
+    <p id="Copy">&copy; CursoemVideo</p>
+
+    <script>
+        let botaoVerific = document.getElementById('botaoVerific')
+        botaoVerific.addEventListener('click', clicar)
+
+        function clicar() {
+            let anoNascim = document.getElementById('anoNascim').value
+            let idade = 2026 - anoNascim
+            let txtVerificacao = document.getElementById('txtVerificacao')
+            let imgDeResp = document.getElementById('imgDeResp')
+            
+            let sexoM = document.getElementById("sexoMasc")
+            let sexoF = document.getElementById("sexoFemin")
+            
+
+            if (sexoM.checked) {
+                txtVerificacao.innerText = `Detectamos Homem com ${idade} ano(s)`
+                txtVerificacao.style.textAlign = 'center'
+                if (idade > 0 && idade < 19) {
+                    imgDeResp.innerHTML = `<img src="image/homem-jovem.png" alt="imagem">`
+                } else if (idade >= 19 && idade < 60) {
+                    imgDeResp.innerHTML = `<img src="image/homem-adulto.png" alt="imagem">`
+                } else if (idade >= 60 && idade <= 116) {
+                    imgDeResp.innerHTML = `<img src="image/homem-idoso.png" alt="imagem">`
+                } else {
+                    window.alert(`[ERRO] Verifique a idade e tente novamente!`)
+                }
+            } else if (sexoF.checked) {
+                txtVerificacao.innerText = `Detectamos Mulher com ${idade} ano(s)`
+                txtVerificacao.style.textAlign = 'center'
+                if (idade > 0 && idade < 19) {
+                    imgDeResp.innerHTML = `<img src="image/mulher-jovem.png" alt="imagem">`
+                } else if (idade >= 19 && idade < 60) {
+                    imgDeResp.innerHTML = `<img src="image/mulher-adulta.png" alt="imagem">`
+                } else if (idade >= 60 && idade <= 116) {
+                    imgDeResp.innerHTML = `<img src="image/mulher-idosa.png" alt="imagem">`
+                } else {
+                    window.alert(`[ERRO] Verifique a idade e tente novamente!`)
+                }
+            } else {
+                window.alert(`[ERRO] Verifique seu sexo e tente novamente!`)
+            }
+        }
+    </script>
+</body>
+</html>
