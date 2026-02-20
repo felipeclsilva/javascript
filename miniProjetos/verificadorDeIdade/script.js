@@ -4,7 +4,7 @@ function verif() {
     let fAno = document.getElementById('anoNasc')
     let res = document.getElementById('res')
 
-    if (fAno.value.length == 0 || fAno.value > ano) { // se liga
+    if (fAno.value.length == 0 || fAno.value >= ano || fAno.value < 1910) { // se liga
 
         window.alert('[ERRO] Verifique os dados e tente novamente!')
 
