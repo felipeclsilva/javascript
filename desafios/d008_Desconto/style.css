@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div#botao {
+    background-image: linear-gradient(to bottom, #E7E7E7, #F5F5F5);
+    
+    width: 170px;
+    height: 60px;
+    margin-bottom: 20px;
+    border: solid;
+    border-width: 1px;
+}
+
+div#botao > p {
+    text-align: center;
+    line-height: 30px;
+}
