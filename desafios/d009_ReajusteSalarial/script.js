@@ -36,7 +36,7 @@ function reajustSal() {
                 res.innerHTML += `<p>Com um aumento de ${porcentReajustNum}%, o salário vai aumentar <strong>R$ ${(salarioNum * (porcentReajustNum / 100)).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong> no próximo mês.</p>`
                 
                 // linha 3 da resposta: informando salário com reajuste personalizado
-                res.innerHTML += `<p>E a partir daí, ${nomeFuncionario} vai passar a ganhar <strong>R$ ${(salarioNum + (salarioNum * (porcentReajustNum / 100))).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong>.</p>`
+                res.innerHTML += `<p>E a partir daí, ${nomeFuncionario} vai passar a ganhar <strong>R$ ${(salarioNum + (salarioNum * (porcentReajustNum / 100))).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>.</p>`
             }
         }
     }
