@@ -3,7 +3,7 @@ let cotDolarNum = Number(cotDolar)
 
 let botao = document.getElementById('botao')
 
-if (cotDolar.length == 0 || isNaN(cotDolarNum) || !isFinite(cotDolarNum) || cotDolarNum <= 0) {
+if (cotDolar === null || cotDolar.length == 0 || isNaN(cotDolarNum) || !isFinite(cotDolarNum) || cotDolarNum <= 0) {
     botao.innerHTML = `<h1>Recarregue a página e insira um valor <br>válido para cotação do dólar<h1>`
     botao.style.background = 'none'
     botao.style.border = 'none'
@@ -13,6 +13,13 @@ if (cotDolar.length == 0 || isNaN(cotDolarNum) || !isFinite(cotDolarNum) || cotD
 } else {
     let titulo = document.getElementById('titulo')
     titulo.innerHTML = 'Conversor R$ → US$'
+
+    botao.style.backgroundImage = 'linear-gradient(to bottom, #E7E7E7, #F5F5F5)'
+    botao.style.width = '130px'
+    botao.style.height = '60px'
+    botao.style.marginBottom = '20px'
+    botao.style.border = 'solid'
+    botao.style.borderWidth = '1px'
 
     botao.innerHTML = `<p>Converter</p>`
     botao.setAttribute('onclick', 'converter()')
