@@ -45,7 +45,7 @@ function calcular() {
                 
                 res.innerHTML += `<p>O cálculo realizado será <strong>Δ = ${b}² - 4 . ${a} . ${c}</strong></p>`
                 
-                res.innerHTML += `<p>O valor calculado foi <mark><strong>Δ = ${delta()}</strong></mark></p>`
+                res.innerHTML += `<p>O valor calculado foi <mark><strong>Δ = ${delta().toFixed(4)}</strong></mark></p>`
 
                 if (delta() > 0) {
                     res.innerHTML += `<p>Como Δ > 0, a equação possui duas raízes: <strong>x' = ${(xUmaLinha(aNum, bNum)).toLocaleString('pt-BR', {maximumFractionDigits: 3})}</strong> e <strong>x''= ${(xDuasLinhas(aNum, bNum)).toLocaleString('pt-BR', {maximumFractionDigits: 3})}</strong></p>`
